@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/AlpriElse/portfolio#readme",
   "dependencies": {
+    "aos": "^2.2.0",
     "bootstrap": "^4.0.0-beta.2",
     "connect": "^3.6.5",
     "serve-static": "^1.13.1"

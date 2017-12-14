@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="stylesheets/font-awesome.min.css">
   <link rel="stylesheet" href="stylesheets/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i|Montserrat:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
 </head>
 <body>
 
@@ -39,9 +40,9 @@
     </nav>
     <div id="home" class="cover-container pb-5">
       <div class="cover-inner container">
-        <h1 class="jumbotron-heading"><em>hello world</em> i'm	<strong>Alpri</strong><span> &lt; al ~ pree&gt;</span></h1>
-        <p class="lead">a polymath college freshman, aspiring computer scientist, and future United States naval officer</p>
-        <p>
+        <h1 class="jumbotron-heading" data-aos="zoom-in"><em>hello world</em> i'm	<strong>Alpri</strong><span> &lt; al ~ pree&gt;</span></h1>
+        <p class="lead" data-aos="zoom-in">a polymath college freshman, aspiring computer scientist, and future United States naval officer</p>
+        <p data-aos="fade-up">
           <a href="#highlights" class="btn btn-outline-white btn-lg mb-2 ml-2 ml-2">I'm Intrigued</a>
         </p>
       </div>
@@ -59,7 +60,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3 col-feature">
+        <div class="col-md-3 col-feature" data-aos="fade-up">
           <div class="rounded-circle justify-center">
             <em class="fa fa-2x fa-graduation-cap"></em>
           </div>
@@ -67,7 +68,7 @@
           <p><b>University of Illinois<br>Urbana-Champaign</b><br>Freshman<br>Pre-Engineering | Division of General Studies</p>
           <p><b>Maine South H.S.<br>Park Ridge, IL</b><br>Class of 2017<br>GPA: 3.7/4.4 (uw/w)</p>
         </div>
-        <div class="col-md-3 col-feature">
+        <div class="col-md-3 col-feature" data-aos="fade-up">
           <div class="rounded-circle justify-center">
             <em class="fa fa-2x fa-folder-open"></em>
           </div>
@@ -75,7 +76,7 @@
           <p><b>Naval ROTC - Navy Option</b><br>Midshipmen Fourth Class
           <p><b>Association for Computing Machinery</b><br>Webmonkeys Member</p>
         </div>
-        <div class="col-md-3 col-feature">
+        <div class="col-md-3 col-feature" data-aos="fade-up">
           <div class="rounded-circle justify-center">
             <em class="fa fa-2x fa-folder"></em>
           </div>
@@ -84,7 +85,7 @@
           <p><b>Maine South H.S. Computer Science Club</b><br>Co-Founder & Organizer</p>
           <p><b>Maine South H.S. Science National Science Honor Society</b><br>Co-Founder & Co-President</p>
         </div>
-        <div class="col-md-3 col-feature">
+        <div class="col-md-3 col-feature" data-aos="fade-up">
           <div class="rounded-circle justify-center">
             <em class="fa fa-2x fa-code"></em>
           </div>
@@ -107,7 +108,7 @@
           <div class="divider"></div>
         </div>
       </div>
-      <div class="row justify-center mt-5">
+      <div class="row justify-center mt-5" data-aos="fade-up">
         <div class="col-md-12 text-left" >
           <h2>Schedule Optimizer</h2>
           <h5>Started Fall 2017</h5>
@@ -132,7 +133,7 @@
           </div>
         </div>
       </div>
-      <div class="row justify-center mt-5">
+      <div class="row justify-center mt-5" data-aos="fade-up">
         <div class="col-md-12 text-left" >
           <h2>MLH: Hack Ridge 2017</h2>
           <h5>Fall 2016 - Spring 2017</h5>
@@ -148,7 +149,7 @@
 
         </div>
       </div>
-      <div class="row justify-center mt-5">
+      <div class="row justify-center mt-5" data-aos="fade-up">
         <div class="col-md-12 text-left" >
           <h2>Maine Dashboard</h2>
           <h5>Started Spring 2015</h5>
@@ -225,6 +226,10 @@
     <script src="node_modules/popper.js/dist/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/aos/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
   </body>
   </html>
