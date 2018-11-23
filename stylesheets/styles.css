@@ -75,7 +75,7 @@ p {
   background: #f7f7f8; }
 
 .bg-primary {
-  background-color: #59a0d7 !important; }
+  background-color: #73B4CF !important; }
 
 .bg-secondary {
   background-color: #46484a !important; }
@@ -206,7 +206,8 @@ li.nav-item .btn-white {
   color: #46484a; }
 
 .cover-1 {
-  background: #2b2d34 url(../img/cover-bg-1.jpg) center;
+  /* background: #2b2d34 url(../img/cover-bg-1.jpg) center; */
+  background: #2b2d34 url(../img/sky-background.jpg) center;
   background-size: cover;
   min-height: 50rem;
   height: auto;
@@ -288,7 +289,7 @@ li.nav-item .btn-white {
       border: 0.15rem solid #dfe1e5; }
 
 .features-4 {
-  background: #2b2d34;
+  background: #1E1F24;
   padding: 5rem 0; }
   .features-4 h2 {
     margin-top: 2rem;
@@ -372,7 +373,7 @@ li.nav-item .btn-white {
   width: 100%; }
 
 .footer-2 {
-  background: #2b2d34;
+  background: #1E1F24;
   min-height: 5rem;
   width: 100%;
   color: #fff;
