@@ -111,7 +111,11 @@
         </div>
       </div>
       <div class="row justify-center">
-        <button id="btn-showAllInfo" class="btn btn-outline-light" onClick="showAllInfo()">Screw it, show me everything!</button>
+        <button id="btn-showAllInfo" class="btn btn-outline-light btn-lg" onClick="showAllInfo()">Screw it, show me everything!</button>
+      </div>
+      <br>
+      <div class="row justify-center">
+        <p class="text-white">Click to see more activities, skills, and coursework.</p>
       </div>
     </div>
     <div class="container" id="allInfo">
@@ -224,7 +228,7 @@
           <ul class="list-group list-group-flush text-white">
             <li class="list-group-item bg-transparent">Javascript <span class="badge badge-pill badge-danger float-right">Advanced</span></li>
             <li class="list-group-item bg-transparent">git <span class="badge badge-pill badge-danger float-right">Advanced</span></li>
-            <li class="list-group-item bg-transparent">ReactJs <span class="badge badge-pill badge-primary float-right">Advanced</span></li>
+            <li class="list-group-item bg-transparent">ReactJs <span class="badge badge-pill badge-danger float-right">Advanced</span></li>
             <li class="list-group-item bg-transparent">Python <span class="badge badge-pill badge-primary float-right">Proficient</span></li>
             <li class="list-group-item bg-transparent">Java <span class="badge badge-pill badge-primary float-right">Proficient</span></li>
           </ul>
@@ -233,7 +237,7 @@
           <ul class="list-group list-group-flush text-white">
             <li class="list-group-item bg-transparent">ExpressJs <span class="badge badge-pill badge-primary float-right">Proficient</span></li>
             <li class="list-group-item bg-transparent">Bootstrap <span class="badge badge-pill badge-primary float-right">Proficient</span></li>
-            <li class="list-group-item bg-transparent">C++ <span class="badge badge-pill badge-success float-right">Proficient</span></li>
+            <li class="list-group-item bg-transparent">C++ <span class="badge badge-pill badge-primary float-right">Proficient</span></li>
             <li class="list-group-item bg-transparent">C <span class="badge badge-pill badge-success float-right">Beginner</span></li>
           </ul>
         </div>
@@ -481,23 +485,21 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/aos/dist/aos.js"></script>
     <script>
-     (() => {
-       AOS.init()
-       $("#allInfo").hide()
+     AOS.init()
+     $("#allInfo").hide()
 
-       let showAllInfo = async () => {
-         let {value: accept} = await swal({
-           title: 'Are you sure???',
-           text: 'The following information might be overwhelming!',
-           type: 'warning',
-           confirmButtonText: 'Show me everything!'
-         })
-         if (accept) {
-           $("#btn-showAllInfo").hide()
-           $("#allInfo").slideDown()
-         }
+     let showAllInfo = async () => {
+       let {value: accept} = await swal({
+         title: 'Are you sure???',
+         text: 'The following information might be overwhelming!',
+         type: 'warning',
+         confirmButtonText: 'Show me everything!'
+       })
+       if (accept) {
+         $("#btn-showAllInfo").hide()
+         $("#allInfo").slideDown()
        }
-     }()
+     }
 
     </script>
 
