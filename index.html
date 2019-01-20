@@ -23,14 +23,14 @@
 </head>
 <body>
 
-  <section class="cover-1 text-center">
+  <section id="home" class="cover-1 text-center">
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-      <div class="container">
+      <div class="container ">
         <a class="navbar-brand" href="#">Alpri Else</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse pull-xs-right justify-content-end" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse pull-xs-right justify-content-end " id="navbarSupportedContent">
           <ul class="navbar-nav mt-2 mt-md-0">
             <li class="nav-item active">
               <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
@@ -48,15 +48,17 @@
         </div>
       </div>
     </nav>
-    <div id="home" class="cover-container pb-5">
-      <div class="cover-inner container">
-        <h1 class="jumbotron-heading text-left" data-aos="zoom-in"><em>hello world</em> i'm	<strong>Alpri</strong>,</h1>
-        <p class="lead text-left" data-aos="zoom-in">I'm a college sophomore passionate about developing technologies
-          to solve real problems people face. I study Computer Science in the College of Engineering at the University of Illinois
-          at Urbana-Champaign. I'm an instructor for a student-run course on campus, giving lectures on basic web
-          development and Express routing. I'm also developing lecture presenting tool for CS 125 Introduction in
-          Computer Science using React and Firebase. I'm looking for an internship for summer 2019 to build my skills
-          as a developer.</p>
+    <div class="cover-container pb-5">
+      <div class="cover-inner container ">
+        <h1 class="jumbotron-heading text-left" data-aos="zoom-in">
+          <em>hello world</em> i'm	<strong>Alpri</strong>,
+        </h1>
+        <p class="lead text-left " data-aos="zoom-in">
+          I'm a college sophomore passionate about developing web applications that eliminate barriers between people and impactful technology.
+          I study Computer Science in the College of Engineering at the University of Illinois at Urbana-Champaign, taking coursework concentrated in software development and technology entreprenuership.
+          I'm currently the Web Development Chair for Reflections | Projections 2019, an annual student-run technology conference for students in the Midwest.
+          Previously, I was a Hackerspace Instructor for a student-run course on campus, giving lectures on basic web development and Express routing.
+          I'm currently looking for an internship for summer 2019 to build my skills as a developer.</p>
         <p data-aos="fade-up">
           <a href="#highlights" class="btn btn-outline-white btn-lg mb-2 ml-2 ml-2 float-left">I'm Intrigued</a>
         </p>
@@ -329,25 +331,79 @@
 
 
   <section id="work" class="content-5 bg-primary text-white">
-    <div class="container">
+    <div class="container col-md-8">
       <div class="row justify-center">
         <div class="col-md-8 text-center" >
           <br>
           <h2>Notable Work</h2>
-          <p class="lead mt-3 text-white">a collection of (some) projects i've worked on</p>
+          <p class="lead mt-3 text-white">a collection of projects i've worked on</p>
           <div class="divider"></div>
         </div>
       </div>
       <div class="row justify-center mt-5" data-aos="fade-up">
         <div class="col-md-12 text-left" >
-          <h2>Schedule Optimizer</h2>
-          <h5>Aug 2017 - Dec 2017</h5>
-          <p class="lead mt-4 mb-5 text-white">An evolution from Course Explorer, Schedule Optimizer uses computation to generate customized class schedules without dealing with the details. Users say which classes they want to take, our website figures out how to make it work. We later plan to make more user personalized features such as professor preference, four year plans, and more. This project initially started as a project for UIUC's CS 196: Freshman Honors course.</p>
+          <h2>Illini Advisor</h2>
+          <h5>Dec 2018 - Present</h5>
+          <p class="lead mt-4 mb-5 text-white">
+            Illini Advisor will use smart keyword filtering to make it easier for students to find courses they will love taking.
+            Students will be able to dynamically type keywords instead of going through a long form of checkboxes to search for courses.
+            This project is still in early development and lacks intended functionality.
+          </p>
+          <div class="row">
+            <div class="col-md-6">
+              <img src="./img/projects/illini-advisor-01.png" class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col-md-6">
+              <img src="./img/projects/illini-advisor-02.png" class="img-fluid" alt="Responsive image">
+            </div>
+          </div>
+          <br />
 
           <div class="row">
             <div class="col-md-4 col-feature mb-4">
+              <h4 class="mb-3">Redux State Management</h4>
+              <p class="text-white">
+                Architecting state shape for usage with Redux framework.
+                Using Redux Thunk middleware to handle asyncronous actions.
+              </p>
+            </div>
+            <div class="col-md-4 col-feature mb-4">
+              <h4 class="mb-3">Links</h4>
+              <p>
+                <a class="btn btn-outline-light" href="https://github.com/AlpriElse/illini-advisor" role="button"><strong>Github Repo</a>
+                <a class="btn btn-outline-light" href="https://illiniadvisor.com/" role="button"><strong>Live Demo</strong></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Start of Schedule Optimizer Project Entry -->
+      <div class="row justify-center mt-5" data-aos="fade-up">
+        <div class="col-md-12 text-left" >
+          <h2>Schedule Optimizer</h2>
+          <h5>Aug 2017 - Dec 2017</h5>
+          <p class="lead mt-4 mb-5 text-white">
+            Schedule Optimizer uses computation to generate customized class schedules without users having to deal with details.
+            Users say which classes they want to take, our website figures out how to make it work.
+            I was responsible for developing an intuitive frontend using React and interacting the our team's backend API.
+            This project initially started as a project for UIUC's CS 196: Freshman Honors course.
+          </p>
+          <div class="row">
+            <div class="col-md-6">
+              <img src="./img/projects/schedule-optimizer-01.png" class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col-md-6">
+              <img src="./img/projects/schedule-optimizer-02.png" class="img-fluid" alt="Responsive image">
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-md-4 col-feature mb-4">
               <h4 class="mb-3">ReactJS Frontend</h4>
-              <p class="text-white">Responsible for modeling course data in ReactJS for seamless user experience. Interfaced with backend API to display course data and dynamically generated schedules.</p>
+              <p class="text-white">
+                Responsible for modeling course data in ReactJS for seamless user experience.
+                Interfaced with backend API to display course data and dynamically generated schedules.
+              </p>
             </div>
             <div class="col-md-4 col-feature mb-4">
               <h4 class="mb-3">Team Project</h4>
@@ -356,8 +412,8 @@
             <div class="col-md-4 col-feature mb-4">
               <h4 class="mb-3">Links</h4>
               <p>
-                <a class="btn btn-outline-light" href="https://github.com/CS196Illinois/schedule-optimizer" role="button">Github Repo	</a>
-                <a class="btn btn-outline-light" href="https://schedule-host.herokuapp.com/" role="button">Demo	</a>
+                <a class="btn btn-outline-light" href="https://github.com/CS196Illinois/schedule-optimizer" role="button"><strong>Github Repo</a>
+                <a class="btn btn-outline-light" href="https://schedule-host.herokuapp.com/" role="button"><strong>Live Demo</strong></a>
               </p>
             </div>
           </div>
@@ -368,6 +424,10 @@
           <h2>MLH: Hack Ridge 2017</h2>
           <h5>October 2016 - March 2017</h5>
           <p class="lead mt-4 mb-5 text-white">Organizer for Major League Hacking sponsored high school hackathon, Hack Ridge. Hack Ridge 2017 was a 24-hour open hackathon for high schoolers in the area and accommodated over <b>100 student hackers</b>, many coming from other high schools. Sponsors include web design company <em>American Eagle</em> and programming course service <em>Code School</em>. Contributed to all aspects of the organizing process, focusing on marketing efforts directed toward Maine South H.S. students.</p>
+          <div class="justify-center">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/kRw7l7dxa3c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <br />
           <div class="col-md-12 col-feature mb-4">
             <h4 class="mb-3">Links</h4>
             <p>
@@ -395,6 +455,7 @@
         </div>
       </div>
     </div>
+    <br />
   </section>
   <section class="cta-2 text-center justify-center features-4 text-white">
     <div class="container">
@@ -415,7 +476,7 @@
         <div class="row">
           <div class="col-md-3 offset-md-3">
             <h2>Instagram</h2>
-            <h5><a href="https://www.instagram.com/alpri.else.photo/">alpri.else.photo</a></h5>
+            <h5><a href="https://www.instagram.com/alpri.else/">alpri.else</a></h5>
           </div>
           <div class="col-md-3">
             <h2>Youtube</h2>
