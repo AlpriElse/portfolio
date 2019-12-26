@@ -1,0 +1,36 @@
+.background-section {
+  padding-bottom: 10vh;
+}
+
+.background__row {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+.background__row > div {
+  flex: 1;
+}
+
+.background__headshot-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  @media (min-width: $breakpoint-md) {
+    padding-left: 1rem;
+  }
+}
+
+img {
+  width: 70vw;
+  border-radius: 1rem;
+  @media (min-width: $breakpoint-md) {
+    width: 90%;
+  }
+  @media (min-width: $breakpoint-lg) {
+    width: 80%;
+  }
+}
