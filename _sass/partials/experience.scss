@@ -1,17 +1,12 @@
 @import "../variables";
 
 .experience-section {
-  min-height: 100vh;
+  min-height: 80vh;
   font-family: "Montserrat";
 }
 
 .experience__wrapper {
   margin-top: 1rem;
-  @media (min-width: $breakpoint-lg) {
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 1rem;
-  }
 }
 
 .experience {
