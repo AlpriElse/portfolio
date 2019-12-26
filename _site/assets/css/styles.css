@@ -1,4 +1,5 @@
-/* http://meyerweb.com/eric/tools/css/reset/  v2.0 | 20110126 License: none (public domain) */
+/* http://meyerweb.com/eric/tools/css/reset/  v2.0 | 20110126 License: none (public domain)
+*/
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
@@ -38,19 +39,14 @@ p { font-family: "Montserrat"; font-size: 1rem; line-height: 1.5rem; font-weight
 code { margin: 1rem 0; background-color: grey; }
 
 .container { width: 90%; margin: 0 auto; }
-
 @media (min-width: 992px) { .container { width: 80%; } }
-
 @media (min-width: 1200px) { .container { width: 60%; } }
 
 a:link, a:active, a:hover, a:visited { text-decoration: none; color: #97ddf5; }
 
-/*  Responsive Breakpoints  */
-/*  Colors */
 .section-intro { min-height: 100vh; width: 80%; margin: 0 auto; padding-bottom: 10vh; }
 
 .section-intro .intro__hello { padding-top: 12vh; }
-
 @media (min-width: 992px) { .section-intro .intro__hello { padding-top: 25vh; } }
 
 .section-intro .intro__introduction, .intro__introduction span { margin-top: 6vh; line-height: 2.6rem; font-weight: 400; }
@@ -68,17 +64,12 @@ a:link, a:active, a:hover, a:visited { text-decoration: none; color: #97ddf5; }
 .background__row > div { flex: 1; }
 
 .background__headshot-wrapper { position: relative; width: 100%; display: flex; justify-content: center; margin-bottom: 1rem; }
-
 @media (min-width: 768px) { .background__headshot-wrapper { padding-left: 1rem; } }
 
 img { width: 70vw; border-radius: 1rem; }
-
 @media (min-width: 768px) { img { width: 90%; } }
-
 @media (min-width: 992px) { img { width: 80%; } }
 
-/*  Responsive Breakpoints  */
-/*  Colors */
 .experience-section { min-height: 80vh; font-family: "Montserrat"; }
 
 .experience__wrapper { margin-top: 1rem; }
@@ -88,9 +79,6 @@ img { width: 70vw; border-radius: 1rem; }
 .experience__header { width: 100%; font-size: 1.2rem; display: flex; flex-wrap: wrap; padding-bottom: 0.75rem; }
 
 .experience__organization { flex: 1; flex-basis: 100%; padding-bottom: 0.5rem; line-height: 1.7rem; }
-
 @media (min-width: 768px) { .experience__organization { flex-basis: initial; padding-bottom: 0; } }
 
 .experience__position { line-height: 1.6rem; }
-
-/*# sourceMappingURL=styles.css.map */
