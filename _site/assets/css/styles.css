@@ -59,7 +59,7 @@ a:link, a:active, a:hover, a:visited { text-decoration: none; color: #97ddf5; }
 
 .background-section { padding-bottom: 10vh; min-height: 70vh; }
 
-.background__row { margin: 0; padding: 0; display: flex; flex-wrap: wrap-reverse; }
+.background__row { margin: 0; padding: 0; display: flex; flex-wrap: wrap-reverse; align-items: center; }
 
 .background__row > div { flex: 1; }
 
@@ -67,8 +67,8 @@ a:link, a:active, a:hover, a:visited { text-decoration: none; color: #97ddf5; }
 @media (min-width: 768px) { .background__headshot-wrapper { padding-left: 1rem; } }
 
 img { max-width: 70vw; width: auto; height: auto; border-radius: 1rem; }
-@media (min-width: 768px) { img { width: 90%; } }
-@media (min-width: 992px) { img { width: 80%; } }
+@media (min-width: 768px) { img { max-width: 90%; } }
+@media (min-width: 992px) { img { max-width: 80%; } }
 
 .experience-section { min-height: 80vh; font-family: "Montserrat"; }
 
