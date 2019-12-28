@@ -31,9 +31,9 @@ img {
   height: auto;
   border-radius: 1rem;
   @media (min-width: $breakpoint-md) {
-    width: 90%;
+    max-width: 90%;
   }
   @media (min-width: $breakpoint-lg) {
-    width: 80%;
+    max-width: 80%;
   }
 }
