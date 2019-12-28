@@ -63,10 +63,10 @@ a:link, a:active, a:hover, a:visited { text-decoration: none; color: #97ddf5; }
 
 .background__row > div { flex: 1; }
 
-.background__headshot-wrapper { position: relative; width: 100%; display: flex; justify-content: center; margin-bottom: 1rem; }
+.background__headshot-wrapper { position: relative; width: 100%; height: auto; display: flex; justify-content: center; margin-bottom: 1rem; }
 @media (min-width: 768px) { .background__headshot-wrapper { padding-left: 1rem; } }
 
-img { max-width: 70vw; width: auto; height: auto; border-radius: 1rem; }
+img { align-self: center; max-width: 70vw; width: auto; height: auto; border-radius: 1rem; }
 @media (min-width: 768px) { img { max-width: 90%; } }
 @media (min-width: 992px) { img { max-width: 80%; } }
 
