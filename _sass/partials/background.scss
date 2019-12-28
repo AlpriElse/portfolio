@@ -26,7 +26,9 @@
 }
 
 img {
-  width: 70vw;
+  max-width: 70vw;
+  width: auto;
+  height: auto;
   border-radius: 1rem;
   @media (min-width: $breakpoint-md) {
     width: 90%;
