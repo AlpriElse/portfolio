@@ -18,6 +18,9 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 /*  Responsive Breakpoints  */
 /*  Colors */
+/*  Defer visibility until Scroll Reveal is loaded  */
+html.sr { visibility: hidden; }
+
 html, body { font-family: "Merriweather"; font-weight: 400; font-size: 1em; background-color: #282c35; color: #fff0ea; }
 
 h1, h2, h3, h4, h5, h6 { font-family: "Montserrat"; margin-bottom: 1rem; font-weight: 700; color: #97ddf5; }

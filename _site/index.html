@@ -32,6 +32,9 @@
 <meta name="msapplication-TileColor" content="#da532c" />
 <meta name="theme-color" content="#ffffff" />
 
+<!-- This needs to be pre-loaded to prevent flickering. Do not move to loading in body. -->
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
   </head>
   <body style="position: relative;">
     <div class="container"><div class='section-intro'>
@@ -44,7 +47,7 @@
  <div class="background-section">
   <h1>Who is this guy?</h1>
   <div class="background__row">
-    <div class="background__col">
+    <div class="background__col background__content">
       <p>
         Hello! I'm Alpri Else, a student software engineer who believes that
         seamless software is what empowers humanity to achieve more. I am
@@ -70,7 +73,7 @@
         Summer 2020 Internship.
       </p>
     </div>
-    <div class="background__col">
+    <div class="background__col background__image">
       <div class="background__headshot-wrapper">
         <img src="/assets/img/headshot.jpg" />
       </div>
@@ -136,6 +139,12 @@
 
 </div>
 
-    
+     <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+  type="text/javascript"
+  charset="utf-8"
+></script>
+<script src="/assets/js/main.js" type="text/javascript"></script>
+
   </body>
 </html>
