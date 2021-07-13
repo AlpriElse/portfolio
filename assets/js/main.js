@@ -19,4 +19,7 @@ $(function() {
   //  Experience animations
   sr.reveal(".experience-section h1", { viewFactor: 1 });
   sr.reveal(".experience", { viewFactor: 0.2 });
+
+  //  Project animations
+  // sr.reveal(".projects-section h1", { viewFactor: 1 });
 });

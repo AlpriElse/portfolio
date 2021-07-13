@@ -85,3 +85,5 @@ img { align-self: center; max-width: 70vw; width: auto; height: auto; border-rad
 @media (min-width: 768px) { .experience__organization { flex-basis: initial; padding-bottom: 0; } }
 
 .experience__position { line-height: 1.6rem; }
+
+.projects-section { min-height: 80vh; font-family: "Montserrat"; }
