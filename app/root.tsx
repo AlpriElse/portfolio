@@ -8,6 +8,8 @@ import {
 } from "remix";
 import type { MetaFunction } from "remix";
 
+import Navigation from "./components/Navigation";
+
 import styles from "./shared.css";
 
 export function links() {
@@ -62,6 +64,7 @@ export default function App() {
       </head>
       <body>
         <div className="container">
+          <Navigation />
           <Outlet />
         </div>
         <ScrollRestoration />

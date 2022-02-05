@@ -39,50 +39,50 @@ const IntroSection = () => (
 );
 
 const BackgroundSection = () => (
-  <div className="background-section">
+  <div id="about" className="background-section">
     <h1>Hi, I'm Alpri!</h1>
     <div className="background__row">
       <div className="background__col background__content">
         <p>
-          I'm a new-grad software engineer who believes that seamless software
-          is what empowers humanity to achieve more. I am passionate about
-          creating software that people love using by grounding my work in the
-          problems people face.
+          I'm a new-grad software engineer who believes that thoughtful software
+          can empower people to achieve more. I am passionate about creating
+          software that people love using by grounding my work in the problems
+          people face while looking at solutions cutting-edge research for
+          inspiration.
         </p>
         <p>
-          I was a B.S. Computer Science student at the
+          I was a Grainger College of Engineering B.S. Computer Science student
+          at the{" "}
           <a target="_blank" href="https://cs.illinois.edu/">
             University of Illinois at Urbana-Champaign (UIUC)
           </a>
-          . While there I was involved with the
+          . While there I was involved with the{" "}
           <a target="_blank" href="http://psauiuc.org/">
             Philippine Student Association (PSA)
           </a>{" "}
-          and
+          and{" "}
           <a target="_blank" href="https://www.reflectionsprojections.org/">
             Reflections Projections
           </a>{" "}
-          in web infrastructure and mentoring roles. I'm also currently pursuing
-          a certificate in Innovation and Entrepreneurship at
+          in web infrastructure and mentoring roles. I've also previously taken
+          innovation and entrepreneurship courses at{" "}
           <a target="_blank" href="https://www.extension.harvard.edu/">
             Harvard Extension School
           </a>
           .
         </p>
         <p>
-          I'm a Software Engineer at
+          I'm currently a Software Engineer at{" "}
           <a target="_blank" href="https://www.hubspot.com/">
             HubSpot
-          </a>
-          , a Cambridge, MA based mission-driven CRM/CMS/MarTech/etc SaaS
-          company, solving for problems CMS developers face. While I'm not
+          </a>{" "}
+          where I solve for problems CMS developers face. While I'm not
           currently looking for new opportunities, I'm always open to connecting
-          via
+          via{" "}
           <a target="_blank" href="https://www.linkedin.com/in/alprielse/">
             linkedin/alprielse
           </a>{" "}
-          and
-          <a href="mailto:alprielse@gmail.com">alprielse@gmail.com</a>!
+          and <a href="mailto:alprielse@gmail.com">alprielse@gmail.com</a>!
         </p>
       </div>
       <div className="background__col background__image">
