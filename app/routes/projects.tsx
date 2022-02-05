@@ -1,4 +1,9 @@
+import { LoaderFunction, useLoaderData } from "remix";
+
 import CourseworkProject from "~/components/projects/CourseworkProject";
+import UnderConstruction from "~/components/util/UnderConstructions";
+import useEnvironment from "~/hooks/useEnvironment";
+
 import styles from "../styles/projects.css";
 
 export function links() {
@@ -10,7 +15,16 @@ export function links() {
   ];
 }
 
+export const loader: LoaderFunction = async ({ request }) => ({ request });
+
 export default function Projects() {
+  const { request } = useLoaderData();
+  const { isDevMode } = useEnvironment(request);
+
+  if (!isDevMode) {
+    return <UnderConstruction />;
+  }
+
   return (
     <>
       <div className="projects-section">
