@@ -1,0 +1,38 @@
+[
+  {
+    "organization": "HubSpot",
+    "url": "http://hubspot.com/",
+    "time": "Jun - Aug 2020",
+    "position": "Backend Software Engineering Intern | HubSpot CMS"
+  },
+  {
+    "organization": "HubSpot",
+    "url": "http://hubspot.com/",
+    "time": "Jul - Dec 2019",
+    "position": "Frontend Software Engineering Co-op | HubSpot CMS"
+  },
+  {
+    "organization": "Philippine Student Association",
+    "url": "http://psauiuc.org/",
+    "time": "May - Nov 2019",
+    "position": "Information Technology Manager | Filipino-Americans Coming Together (FACT) Conference"
+  },
+  {
+    "organization": "Reflections | Projections",
+    "url": "https://reflectionsprojections.org/",
+    "time": "Jan - Sep 2019",
+    "position": "Web Development Chair"
+  },
+  {
+    "organization": "University of Illinois at Urbana-Champaign",
+    "url": "http://cs196.cs.illinois.edu/",
+    "time": "Aug - Dec 2018",
+    "position": "CS 196 Web Hackerspace Instructor"
+  },
+  {
+    "organization": "University of Illinois at Urbana-Champaign",
+    "url": "http://cs196.cs.illinois.edu/",
+    "time": "Jan - May 2018",
+    "position": "CS 196 Course Assistant"
+  }
+]
