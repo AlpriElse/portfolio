@@ -7,7 +7,9 @@
 
 .section-intro .intro__hello {
   padding-top: 12vh;
-  @media (min-width: $breakpoint-lg) {
+}
+@media (min-width: 992) {
+  .section-intro .intro__hello {
     padding-top: 25vh;
   }
 }
@@ -59,7 +61,9 @@
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
-  @media (min-width: $breakpoint-md) {
+}
+@media (min-width: 76px) {
+  .background__headshot-wrapper {
     padding-left: 1rem;
   }
 }
@@ -70,10 +74,14 @@ img {
   width: auto;
   height: auto;
   border-radius: 1rem;
-  @media (min-width: $breakpoint-md) {
+}
+@media (min-width: 768px) {
+  img {
     max-width: 90%;
   }
-  @media (min-width: $breakpoint-lg) {
+}
+@media (min-width: 992px) {
+  img {
     max-width: 80%;
   }
 }
@@ -103,7 +111,9 @@ img {
   flex-basis: 100%;
   padding-bottom: 0.5rem;
   line-height: 1.7rem;
-  @media (min-width: $breakpoint-md) {
+}
+@media (min-width: 768px) {
+  .experience__organization {
     flex-basis: initial;
     padding-bottom: 0;
   }

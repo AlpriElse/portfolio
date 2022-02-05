@@ -67,12 +67,14 @@ code {
 .container {
   width: 90%;
   margin: 0 auto;
-
-  @media (min-width: 992px) {
+}
+@media (min-width: 992px) {
+  .container {
     width: 80%;
   }
-
-  @media (min-width: 1200px) {
+}
+@media (min-width: 1200px) {
+  .container {
     width: 60%;
   }
 }

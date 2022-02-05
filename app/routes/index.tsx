@@ -11,7 +11,7 @@ export function links() {
 
 import experiences from "../data/experience.json";
 
-export default function Index() {
+export default function Landing() {
   return (
     <>
       <IntroSection />
@@ -70,7 +70,7 @@ const BackgroundSection = () => (
           .
         </p>
         <p>
-          I'm an incoming backend Software Engineer at
+          I'm a Software Engineer at
           <a target="_blank" href="https://www.hubspot.com/">
             HubSpot
           </a>
