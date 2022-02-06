@@ -5,7 +5,7 @@ export default function CourseworkProject({
 }: {
   children: ReactNode;
 }) {
-  return <div>{children}</div>;
+  return <div className="coursework-project">{children}</div>;
 }
 
 CourseworkProject.Title = ({ children }: { children: ReactNode }) => (

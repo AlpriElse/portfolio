@@ -2,10 +2,15 @@
   padding-bottom: 5vh;
 }
 
+.coursework-project {
+  margin-bottom: 3em;
+}
+
 .coursework-project__title {
   padding: 0;
   padding-bottom: 0.5em;
   margin: 0;
+  font-size: 1.1em;
   font-weight: 400;
 }
 
