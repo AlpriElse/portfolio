@@ -1,4 +1,4 @@
-import { LoaderFunction, useLoaderData } from "remix";
+import { LoaderFunction, useLoaderData } from "@remix-run/react";
 
 import UnderConstruction from "~/components/util/UnderConstructions";
 import useEnvironment from "~/hooks/useEnvironment";
