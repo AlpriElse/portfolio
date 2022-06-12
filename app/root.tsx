@@ -63,9 +63,24 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <div className="container">
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "top",
+            height: "100vh",
+            width: "100%",
+          }}
+        >
           <Navigation />
-          <Outlet />
+          <div
+            style={{
+              flex: "0 1 auto",
+              padding: "2em",
+            }}
+          >
+            <Outlet />
+          </div>
         </div>
         <ScrollRestoration />
         <Scripts />

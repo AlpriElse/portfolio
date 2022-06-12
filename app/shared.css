@@ -64,21 +64,6 @@ code {
   background-color: grey;
 }
 
-.container {
-  width: 90%;
-  margin: 0 auto;
-}
-@media (min-width: 992px) {
-  .container {
-    width: 70%;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 50%;
-  }
-}
-
 a:link,
 a:active,
 a:hover,
@@ -88,30 +73,40 @@ a:visited {
 }
 
 .navigation {
-  padding-top: 0.5em;
+  flex: 0 0 20vw;
 }
-.navigation ul {
+
+.navigation h1 {
   padding: 0;
+  margin: 0;
+}
+
+.navigation div {
+  padding: 2em;
+  padding-left: 4em;
+  padding-right: 4em;
+  position: sticky;
+  top: 2em;
+}
+
+.navigation ul {
   list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  padding: 0;
 }
 
 .navigation ul li {
   font-family: "Montserrat";
   margin-bottom: 1rem;
-  padding: 0.75em;
   font-weight: 400;
   font-size: 1.2rem;
   color: #97ddf5;
 }
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   .navigation {
     padding-top: 2em;
   }
   .navigation ul li {
     font-size: 1.5rem;
   }
-}
+} */

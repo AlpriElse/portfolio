@@ -14394,7 +14394,7 @@ function useTransition() {
   return transitionManager.getState().transition;
 }
 var LiveReload = false ? () => null : function LiveReload2({
-  port = Number(50406),
+  port = Number(57367),
   nonce = void 0
 }) {
   let js = String.raw;
@@ -14607,17 +14607,22 @@ init_react();
 function Navigation() {
   return /* @__PURE__ */ React.createElement("div", {
     className: "navigation"
-  }, /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement(Link2, {
+  }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", null, "Alpri Else"), /* @__PURE__ */ React.createElement("ul", {
+    style: {
+      display: "flex",
+      flexDirection: "column"
+    }
+  }, /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement(Link2, {
     to: "/#about"
   }, "About")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement(Link2, {
     to: "/projects"
   }, "Projects")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement(Link2, {
     to: "/writing"
-  }, "Writing"))));
+  }, "Writing")))));
 }
 
 // app/shared.css
-var shared_default = "/build/_assets/shared-7YTCYM4H.css";
+var shared_default = "/build/_assets/shared-BGMLKRRL.css";
 
 // route:/Users/alprielse/src/portfolio/app/root.tsx
 function links() {
@@ -14670,8 +14675,19 @@ function App() {
     name: "theme-color",
     content: "#ffffff"
   }), /* @__PURE__ */ React.createElement(Meta, null), /* @__PURE__ */ React.createElement(Links, null)), /* @__PURE__ */ React.createElement("body", null, /* @__PURE__ */ React.createElement("div", {
-    className: "container"
-  }, /* @__PURE__ */ React.createElement(Navigation, null), /* @__PURE__ */ React.createElement(Outlet, null)), /* @__PURE__ */ React.createElement(ScrollRestoration, null), /* @__PURE__ */ React.createElement(Scripts, null), /* @__PURE__ */ React.createElement(LiveReload, null)));
+    style: {
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "top",
+      height: "100vh",
+      width: "100%"
+    }
+  }, /* @__PURE__ */ React.createElement(Navigation, null), /* @__PURE__ */ React.createElement("div", {
+    style: {
+      flex: "0 1 auto",
+      padding: "2em"
+    }
+  }, /* @__PURE__ */ React.createElement(Outlet, null))), /* @__PURE__ */ React.createElement(ScrollRestoration, null), /* @__PURE__ */ React.createElement(Scripts, null), /* @__PURE__ */ React.createElement(LiveReload, null)));
 }
 
 // route:/Users/alprielse/src/portfolio/app/routes/projects.tsx
@@ -14785,7 +14801,7 @@ function Writing() {
   if (!isDevMode) {
     return /* @__PURE__ */ React.createElement(UnderConstruction, null);
   }
-  return /* @__PURE__ */ React.createElement("h1", null, "Writing");
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Writing"));
 }
 
 // route:/Users/alprielse/src/portfolio/app/routes/index.tsx
@@ -14841,7 +14857,7 @@ var ExperienceSection_default = ({ experiences }) => /* @__PURE__ */ React.creat
   className: "experience__wrapper"
 }, experiences.map((experience) => /* @__PURE__ */ React.createElement("div", {
   className: "experience",
-  key: ""
+  key: experience.position
 }, /* @__PURE__ */ React.createElement("div", {
   className: "experience__header"
 }, /* @__PURE__ */ React.createElement("a", {
@@ -14871,7 +14887,7 @@ var IntroSection_default = () => /* @__PURE__ */ React.createElement("div", {
 }, "alprielse@gmail.com")));
 
 // app/styles/landing.css
-var landing_default = "/build/_assets/landing-FJRHH3L6.css";
+var landing_default = "/build/_assets/landing-VHXBDD4E.css";
 
 // app/data/experience.json
 var experience_default = [
@@ -14942,7 +14958,7 @@ function Landing() {
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
 init_react();
-var assets_manifest_default = { "version": "7fbb9f1f", "entry": { "module": "/build/entry.client-LMMVBKIU.js", "imports": ["/build/_shared/chunk-TMQATFRP.js", "/build/_shared/chunk-IYRIQ6PI.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-4QRN63ET.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-L3WZ4WDE.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/projects-B6D7POCO.js", "imports": ["/build/_shared/chunk-QZBM5DFC.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/writing": { "id": "routes/writing", "parentId": "root", "path": "writing", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/writing-LOIVYYDK.js", "imports": ["/build/_shared/chunk-QZBM5DFC.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-7FBB9F1F.js" };
+var assets_manifest_default = { "version": "7aa3edf0", "entry": { "module": "/build/entry.client-EMNJGZ7O.js", "imports": ["/build/_shared/chunk-G4ZEEE3O.js", "/build/_shared/chunk-IYRIQ6PI.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-VXSZUAYI.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-UNVD5KIO.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/projects-XM3VYU5U.js", "imports": ["/build/_shared/chunk-QZBM5DFC.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/writing": { "id": "routes/writing", "parentId": "root", "path": "writing", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/writing-Q4FT4SLZ.js", "imports": ["/build/_shared/chunk-QZBM5DFC.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-7AA3EDF0.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };

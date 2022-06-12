@@ -14,7 +14,7 @@ export default ({ experiences }: ExperienceSectionProps) => (
     <h1>Experience</h1>
     <div className="experience__wrapper">
       {experiences.map((experience) => (
-        <div className="experience" key="">
+        <div className="experience" key={experience.position}>
           <div className="experience__header">
             <a className="experience__organization" href={experience.url}>
               {experience.organization}

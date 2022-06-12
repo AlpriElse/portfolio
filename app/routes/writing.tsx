@@ -12,5 +12,9 @@ export default function Writing() {
     return <UnderConstruction />;
   }
 
-  return <h1>Writing</h1>;
+  return (
+    <>
+      <h1>Writing</h1>
+    </>
+  );
 }
