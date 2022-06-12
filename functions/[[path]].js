@@ -14805,7 +14805,7 @@ var BackgroundSection_default = () => /* @__PURE__ */ React.createElement("div",
   className: "background__row"
 }, /* @__PURE__ */ React.createElement("div", {
   className: "background__col background__content"
-}, /* @__PURE__ */ React.createElement("p", null, "I'm a new-grad software engineer who believes that thoughtful software can empower people to achieve more. I am passionate about creating software that people love using by grounding my work in the problems people face while looking at solutions cutting-edge research for inspiration."), /* @__PURE__ */ React.createElement("p", null, "I was a Grainger College of Engineering B.S. Computer Science student at the", " ", /* @__PURE__ */ React.createElement("a", {
+}, /* @__PURE__ */ React.createElement("p", null, "I'm a new-grad software engineer who believes that thoughtful software can empower people to achieve more. I am passionate about creating software that people love using by grounding my work in problems people face while looking at solutions in cutting-edge research for inspiration."), /* @__PURE__ */ React.createElement("p", null, "I was a Grainger College of Engineering B.S. Computer Science student at the", " ", /* @__PURE__ */ React.createElement("a", {
   target: "_blank",
   href: "https://cs.illinois.edu/"
 }, "University of Illinois at Urbana-Champaign (UIUC)"), ". While there I was involved with the", " ", /* @__PURE__ */ React.createElement("a", {
@@ -14863,7 +14863,7 @@ var IntroSection_default = () => /* @__PURE__ */ React.createElement("div", {
   className: "intro__introduction"
 }, "I'm ", /* @__PURE__ */ React.createElement("span", {
   className: "intro__name"
-}, "Alpri Else"), ", an entrepreneurial software engineer passionate about creating empowering software that people love using."), /* @__PURE__ */ React.createElement("p", {
+}, "Alpri Else"), ", an entrepreneurial software engineer passionate about creating empowering technology products that people love using."), /* @__PURE__ */ React.createElement("p", {
   className: "intro__get-in-touch"
 }, "Get in touch with me:", " ", /* @__PURE__ */ React.createElement("a", {
   href: "mailto:alprielse@gmail.com",
@@ -14875,6 +14875,18 @@ var landing_default = "/build/_assets/landing-FJRHH3L6.css";
 
 // app/data/experience.json
 var experience_default = [
+  {
+    organization: "HubSpot",
+    url: "http://hubspot.com/",
+    time: "June 2022 - present",
+    position: "Senior Software Engineer | HubSpot CMS"
+  },
+  {
+    organization: "HubSpot",
+    url: "http://hubspot.com/",
+    time: "Aug 2021 - May 2022",
+    position: "Software Engineer | HubSpot CMS"
+  },
   {
     organization: "HubSpot",
     url: "http://hubspot.com/",
@@ -14930,7 +14942,7 @@ function Landing() {
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
 init_react();
-var assets_manifest_default = { "version": "8f1d3a34", "entry": { "module": "/build/entry.client-LMMVBKIU.js", "imports": ["/build/_shared/chunk-TMQATFRP.js", "/build/_shared/chunk-IYRIQ6PI.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-4QRN63ET.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-VADPLV76.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/projects-B6D7POCO.js", "imports": ["/build/_shared/chunk-QZBM5DFC.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/writing": { "id": "routes/writing", "parentId": "root", "path": "writing", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/writing-LOIVYYDK.js", "imports": ["/build/_shared/chunk-QZBM5DFC.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-8F1D3A34.js" };
+var assets_manifest_default = { "version": "7fbb9f1f", "entry": { "module": "/build/entry.client-LMMVBKIU.js", "imports": ["/build/_shared/chunk-TMQATFRP.js", "/build/_shared/chunk-IYRIQ6PI.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-4QRN63ET.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-L3WZ4WDE.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/projects-B6D7POCO.js", "imports": ["/build/_shared/chunk-QZBM5DFC.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/writing": { "id": "routes/writing", "parentId": "root", "path": "writing", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/writing-LOIVYYDK.js", "imports": ["/build/_shared/chunk-QZBM5DFC.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-7FBB9F1F.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };

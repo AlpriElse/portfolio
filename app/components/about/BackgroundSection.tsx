@@ -6,8 +6,8 @@ export default () => (
         <p>
           I'm a new-grad software engineer who believes that thoughtful software
           can empower people to achieve more. I am passionate about creating
-          software that people love using by grounding my work in the problems
-          people face while looking at solutions cutting-edge research for
+          software that people love using by grounding my work in problems
+          people face while looking at solutions in cutting-edge research for
           inspiration.
         </p>
         <p>
