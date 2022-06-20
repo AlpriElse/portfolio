@@ -22,7 +22,7 @@ export default function Navigation() {
             <Link to="/projects">Projects</Link>
           </li>
           <li>
-            <Link to="/writing">Writing</Link>
+            <Link to="/blog">Blog</Link>
           </li>
         </ul>
       </div>

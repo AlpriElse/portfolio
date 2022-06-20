@@ -2,6 +2,7 @@
   "private": true,
   "name": "portfolio",
   "description": "",
+  "platform": "node",
   "license": "",
   "scripts": {
     "build": "remix build",
@@ -13,6 +14,7 @@
   "dependencies": {
     "@remix-run/cloudflare": "*",
     "@remix-run/cloudflare-pages": "*",
+    "@remix-run/node": "^1.6.0",
     "@remix-run/react": "*",
     "cross-env": "^7.0.3",
     "react": "^17.0.2",

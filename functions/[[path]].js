@@ -2452,12 +2452,12 @@ var init_responses = __esm({
       let responseInit = typeof init2 === "number" ? {
         status: init2
       } : init2;
-      let headers = new Headers(responseInit.headers);
-      if (!headers.has("Content-Type")) {
-        headers.set("Content-Type", "application/json; charset=utf-8");
+      let headers3 = new Headers(responseInit.headers);
+      if (!headers3.has("Content-Type")) {
+        headers3.set("Content-Type", "application/json; charset=utf-8");
       }
       return new Response(JSON.stringify(data), __spreadProps(__spreadValues({}, responseInit), {
-        headers
+        headers: headers3
       }));
     };
     redirect = (url, init2 = 302) => {
@@ -2469,10 +2469,10 @@ var init_responses = __esm({
       } else if (typeof responseInit.status === "undefined") {
         responseInit.status = 302;
       }
-      let headers = new Headers(responseInit.headers);
-      headers.set("Location", url);
+      let headers3 = new Headers(responseInit.headers);
+      headers3.set("Location", url);
       return new Response(null, __spreadProps(__spreadValues({}, responseInit), {
-        headers
+        headers: headers3
       }));
     };
     redirectStatusCodes = /* @__PURE__ */ new Set([301, 302, 303, 307, 308]);
@@ -2765,15 +2765,15 @@ function getDocumentHeaders(build, matches, routeLoaderResponses, actionResponse
     let routeLoaderResponse = routeLoaderResponses[match.route.id];
     let loaderHeaders = routeLoaderResponse ? routeLoaderResponse.headers : new Headers();
     let actionHeaders = actionResponse ? actionResponse.headers : new Headers();
-    let headers = new Headers(routeModule.headers ? typeof routeModule.headers === "function" ? routeModule.headers({
+    let headers3 = new Headers(routeModule.headers ? typeof routeModule.headers === "function" ? routeModule.headers({
       loaderHeaders,
       parentHeaders,
       actionHeaders
     }) : routeModule.headers : void 0);
-    prependCookies(actionHeaders, headers);
-    prependCookies(loaderHeaders, headers);
-    prependCookies(parentHeaders, headers);
-    return headers;
+    prependCookies(actionHeaders, headers3);
+    prependCookies(loaderHeaders, headers3);
+    prependCookies(parentHeaders, headers3);
+    return headers3;
   }, new Headers());
 }
 function prependCookies(parentHeaders, childHeaders) {
@@ -2906,18 +2906,18 @@ function flattenRoutes(routes2, branches, parentsMeta, parentPath) {
     parentPath = "";
   }
   routes2.forEach((route, index) => {
-    let meta2 = {
+    let meta4 = {
       relativePath: route.path || "",
       caseSensitive: route.caseSensitive === true,
       childrenIndex: index,
       route
     };
-    if (meta2.relativePath.startsWith("/")) {
-      !meta2.relativePath.startsWith(parentPath) ? true ? invariant(false, 'Absolute route path "' + meta2.relativePath + '" nested under path ' + ('"' + parentPath + '" is not valid. An absolute child route path ') + "must start with the combined path of all its parent routes.") : invariant(false) : void 0;
-      meta2.relativePath = meta2.relativePath.slice(parentPath.length);
+    if (meta4.relativePath.startsWith("/")) {
+      !meta4.relativePath.startsWith(parentPath) ? true ? invariant(false, 'Absolute route path "' + meta4.relativePath + '" nested under path ' + ('"' + parentPath + '" is not valid. An absolute child route path ') + "must start with the combined path of all its parent routes.") : invariant(false) : void 0;
+      meta4.relativePath = meta4.relativePath.slice(parentPath.length);
     }
-    let path = joinPaths([parentPath, meta2.relativePath]);
-    let routesMeta = parentsMeta.concat(meta2);
+    let path = joinPaths([parentPath, meta4.relativePath]);
+    let routesMeta = parentsMeta.concat(meta4);
     if (route.children && route.children.length > 0) {
       !(route.index !== true) ? true ? invariant(false, "Index routes must not have child routes. Please remove " + ('all child routes from route path "' + path + '".')) : invariant(false) : void 0;
       flattenRoutes(route.children, branches, routesMeta, path);
@@ -2934,7 +2934,7 @@ function flattenRoutes(routes2, branches, parentsMeta, parentPath) {
   return branches;
 }
 function rankRouteBranches(branches) {
-  branches.sort((a, b) => a.score !== b.score ? b.score - a.score : compareIndexes(a.routesMeta.map((meta2) => meta2.childrenIndex), b.routesMeta.map((meta2) => meta2.childrenIndex)));
+  branches.sort((a, b) => a.score !== b.score ? b.score - a.score : compareIndexes(a.routesMeta.map((meta4) => meta4.childrenIndex), b.routesMeta.map((meta4) => meta4.childrenIndex)));
 }
 function computeScore(path, index) {
   let segments = path.split("/");
@@ -2959,18 +2959,18 @@ function matchRouteBranch(branch, pathname) {
   let matchedPathname = "/";
   let matches = [];
   for (let i = 0; i < routesMeta.length; ++i) {
-    let meta2 = routesMeta[i];
+    let meta4 = routesMeta[i];
     let end = i === routesMeta.length - 1;
     let remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/";
     let match = matchPath({
-      path: meta2.relativePath,
-      caseSensitive: meta2.caseSensitive,
+      path: meta4.relativePath,
+      caseSensitive: meta4.caseSensitive,
       end
     }, remainingPathname);
     if (!match)
       return null;
     Object.assign(matchedParams, match.params);
-    let route = meta2.route;
+    let route = meta4.route;
     matches.push({
       params: matchedParams,
       pathname: joinPaths([matchedPathname, match.pathname]),
@@ -3858,15 +3858,15 @@ async function handleDataRequest({
       });
     }
     if (isRedirectResponse(response)) {
-      let headers = new Headers(response.headers);
-      headers.set("X-Remix-Redirect", headers.get("Location"));
-      headers.delete("Location");
+      let headers3 = new Headers(response.headers);
+      headers3.set("X-Remix-Redirect", headers3.get("Location"));
+      headers3.delete("Location");
       if (response.headers.get("Set-Cookie") !== null) {
-        headers.set("X-Remix-Revalidate", "yes");
+        headers3.set("X-Remix-Revalidate", "yes");
       }
       return new Response(null, {
         status: 204,
-        headers
+        headers: headers3
       });
     }
     if (handleDataRequest2) {
@@ -4465,13 +4465,13 @@ function createMemoryUploadHandler({
   maxPartSize = 3e6
 } = {}) {
   return async ({
-    filename,
+    filename: filename3,
     contentType,
     name,
     data
   }) => {
     if (filter && !await filter({
-      filename,
+      filename: filename3,
       contentType,
       name
     })) {
@@ -4486,8 +4486,8 @@ function createMemoryUploadHandler({
       }
       chunks.push(chunk);
     }
-    if (typeof filename === "string") {
-      return new File(chunks, filename, {
+    if (typeof filename3 === "string") {
+      return new File(chunks, filename3, {
         type: contentType
       });
     }
@@ -8828,7 +8828,7 @@ var require_react_dom_server_node_development = __commonJS({
     if (true) {
       (function() {
         "use strict";
-        var React6 = require_react();
+        var React8 = require_react();
         var _assign = require_object_assign();
         var stream = require_stream();
         var ReactVersion = "17.0.2";
@@ -8839,7 +8839,7 @@ var require_react_dom_server_node_development = __commonJS({
           }
           return "Minified React error #" + code + "; visit " + url + " for the full message or use the non-minified dev environment for full errors and additional helpful warnings.";
         }
-        var ReactSharedInternals = React6.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React8.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         function warn(format2) {
           {
             for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -11076,7 +11076,7 @@ var require_react_dom_server_node_development = __commonJS({
           }
           warnUnknownProperties(type, props, eventRegistry);
         }
-        var toArray = React6.Children.toArray;
+        var toArray = React8.Children.toArray;
         var currentDebugStacks = [];
         var ReactCurrentDispatcher$1 = ReactSharedInternals.ReactCurrentDispatcher;
         var ReactDebugCurrentFrame$1;
@@ -11231,7 +11231,7 @@ var require_react_dom_server_node_development = __commonJS({
           return null;
         }
         function flattenTopLevelChildren(children) {
-          if (!React6.isValidElement(children)) {
+          if (!React8.isValidElement(children)) {
             return toArray(children);
           }
           var element = children;
@@ -11239,7 +11239,7 @@ var require_react_dom_server_node_development = __commonJS({
             return [element];
           }
           var fragmentChildren = element.props.children;
-          if (!React6.isValidElement(fragmentChildren)) {
+          if (!React8.isValidElement(fragmentChildren)) {
             return toArray(fragmentChildren);
           }
           var fragmentChildElement = fragmentChildren;
@@ -11250,7 +11250,7 @@ var require_react_dom_server_node_development = __commonJS({
             return children;
           }
           var content = "";
-          React6.Children.forEach(children, function(child) {
+          React8.Children.forEach(children, function(child) {
             if (child == null) {
               return;
             }
@@ -11316,7 +11316,7 @@ var require_react_dom_server_node_development = __commonJS({
           }
         }
         function resolve(child, context, threadID) {
-          while (React6.isValidElement(child)) {
+          while (React8.isValidElement(child)) {
             var element = child;
             var Component = element.type;
             {
@@ -11689,7 +11689,7 @@ var require_react_dom_server_node_development = __commonJS({
               context = _resolve.context;
               if (nextChild === null || nextChild === false) {
                 return "";
-              } else if (!React6.isValidElement(nextChild)) {
+              } else if (!React8.isValidElement(nextChild)) {
                 if (nextChild != null && nextChild.$$typeof != null) {
                   var $$typeof = nextChild.$$typeof;
                   if (!($$typeof !== REACT_PORTAL_TYPE)) {
@@ -11788,7 +11788,7 @@ var require_react_dom_server_node_development = __commonJS({
                   }
                   case REACT_MEMO_TYPE: {
                     var _element = nextChild;
-                    var _nextChildren6 = [React6.createElement(elementType.type, _assign({
+                    var _nextChildren6 = [React8.createElement(elementType.type, _assign({
                       ref: _element.ref
                     }, _element.props))];
                     var _frame6 = {
@@ -11870,7 +11870,7 @@ var require_react_dom_server_node_development = __commonJS({
                     var payload = lazyComponent._payload;
                     var init2 = lazyComponent._init;
                     var result = init2(payload);
-                    var _nextChildren10 = [React6.createElement(result, _assign({
+                    var _nextChildren10 = [React8.createElement(result, _assign({
                       ref: _element2.ref
                     }, _element2.props))];
                     var _frame10 = {
@@ -12464,11 +12464,11 @@ function isHtmlLinkDescriptor(object) {
   return object != null && typeof object.rel === "string" && typeof object.href === "string";
 }
 async function getStylesheetPrefetchLinks(matches, routeModules) {
-  let links4 = await Promise.all(matches.map(async (match) => {
+  let links6 = await Promise.all(matches.map(async (match) => {
     let mod = await loadRouteModule(match.route, routeModules);
     return mod.links ? mod.links() : [];
   }));
-  return links4.flat(1).filter(isHtmlLinkDescriptor).filter((link) => link.rel === "stylesheet" || link.rel === "preload").map((_a) => {
+  return links6.flat(1).filter(isHtmlLinkDescriptor).filter((link) => link.rel === "stylesheet" || link.rel === "preload").map((_a) => {
     var _b = _a, {
       rel
     } = _b, attrs = __objRest(_b, [
@@ -12622,7 +12622,7 @@ function getActionInit(submission, signal) {
     method,
     formData
   } = submission;
-  let headers = void 0;
+  let headers3 = void 0;
   let body = formData;
   if (encType === "application/x-www-form-urlencoded") {
     body = new URLSearchParams();
@@ -12630,7 +12630,7 @@ function getActionInit(submission, signal) {
       invariant2(typeof value === "string", `File inputs are not supported with encType "application/x-www-form-urlencoded", please use "multipart/form-data" instead.`);
       body.append(key, value);
     }
-    headers = {
+    headers3 = {
       "Content-Type": encType
     };
   }
@@ -12639,7 +12639,7 @@ function getActionInit(submission, signal) {
     body,
     signal,
     credentials: "same-origin",
-    headers
+    headers: headers3
   };
 }
 
@@ -14014,8 +14014,8 @@ function Links() {
     routeModules,
     manifest
   } = useRemixEntryContext();
-  let links4 = React3.useMemo(() => getLinksForMatches(matches, routeModules, manifest), [matches, routeModules, manifest]);
-  return /* @__PURE__ */ React3.createElement(React3.Fragment, null, links4.map((link) => isPageLinkDescriptor(link) ? /* @__PURE__ */ React3.createElement(PrefetchPageLinks, _extends3({
+  let links6 = React3.useMemo(() => getLinksForMatches(matches, routeModules, manifest), [matches, routeModules, manifest]);
+  return /* @__PURE__ */ React3.createElement(React3.Fragment, null, links6.map((link) => isPageLinkDescriptor(link) ? /* @__PURE__ */ React3.createElement(PrefetchPageLinks, _extends3({
     key: link.page
   }, link)) : /* @__PURE__ */ React3.createElement("link", _extends3({
     key: link.rel + link.href
@@ -14047,9 +14047,9 @@ function usePrefetchedStylesheets(matches) {
   let [styleLinks, setStyleLinks] = React3.useState([]);
   React3.useEffect(() => {
     let interrupted = false;
-    getStylesheetPrefetchLinks(matches, routeModules).then((links4) => {
+    getStylesheetPrefetchLinks(matches, routeModules).then((links6) => {
       if (!interrupted)
-        setStyleLinks(links4);
+        setStyleLinks(links6);
     });
     return () => {
       interrupted = true;
@@ -14095,7 +14095,7 @@ function Meta() {
     routeModules
   } = useRemixEntryContext();
   let location = useLocation();
-  let meta2 = {};
+  let meta4 = {};
   let parentsData = {};
   for (let match of matches) {
     let routeId = match.route.id;
@@ -14109,11 +14109,11 @@ function Meta() {
         params,
         location
       }) : routeModule.meta;
-      Object.assign(meta2, routeMeta);
+      Object.assign(meta4, routeMeta);
     }
     parentsData[routeId] = data;
   }
-  return /* @__PURE__ */ React3.createElement(React3.Fragment, null, Object.entries(meta2).map(([name, value]) => {
+  return /* @__PURE__ */ React3.createElement(React3.Fragment, null, Object.entries(meta4).map(([name, value]) => {
     if (!value) {
       return null;
     }
@@ -14394,7 +14394,7 @@ function useTransition() {
   return transitionManager.getState().transition;
 }
 var LiveReload = false ? () => null : function LiveReload2({
-  port = Number(61113),
+  port = Number(51815),
   nonce = void 0
 }) {
   let js = String.raw;
@@ -14649,8 +14649,8 @@ function Navigation() {
   }, "About")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement(Link2, {
     to: "/projects"
   }, "Projects")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement(Link2, {
-    to: "/writing"
-  }, "Writing")))));
+    to: "/blog"
+  }, "Blog")))));
   if (deviceType == 0 /* MOBILE */) {
     return null;
   }
@@ -14728,11 +14728,138 @@ function App() {
   }, /* @__PURE__ */ React.createElement(Outlet, null))), /* @__PURE__ */ React.createElement(ScrollRestoration, null), /* @__PURE__ */ React.createElement(Scripts, null), /* @__PURE__ */ React.createElement(LiveReload, null)));
 }
 
+// mdx:/Users/alprielse/src/portfolio/app/routes/blog/my-first-post.mdx
+var my_first_post_exports = {};
+__export(my_first_post_exports, {
+  attributes: () => attributes,
+  default: () => my_first_post_default,
+  filename: () => filename,
+  headers: () => headers,
+  links: () => links2,
+  meta: () => meta2
+});
+init_react();
+var import_react8 = __toESM(require_react());
+var attributes = {
+  "meta": {
+    "title": "My first post"
+  }
+};
+function MDXContent(props = {}) {
+  const _components = Object.assign({
+    h1: "h1",
+    p: "p"
+  }, props.components), { wrapper: MDXLayout } = _components;
+  const _content = /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(_components.h1, null, "This is h1"), "\n", /* @__PURE__ */ import_react8.default.createElement(_components.p, null, "Hello world"));
+  return MDXLayout ? /* @__PURE__ */ import_react8.default.createElement(MDXLayout, __spreadValues({}, props), _content) : _content;
+}
+var my_first_post_default = MDXContent;
+var filename = "my-first-post.mdx";
+var headers = typeof attributes !== "undefined" && attributes.headers;
+var meta2 = typeof attributes !== "undefined" && attributes.meta;
+var links2 = void 0;
+
+// mdx:/Users/alprielse/src/portfolio/app/routes/blog/90s-mixtape.mdx
+var s_mixtape_exports = {};
+__export(s_mixtape_exports, {
+  attributes: () => attributes2,
+  default: () => s_mixtape_default,
+  filename: () => filename2,
+  headers: () => headers2,
+  links: () => links3,
+  meta: () => meta3
+});
+init_react();
+var import_react9 = __toESM(require_react());
+var attributes2 = {
+  "meta": {
+    "title": "A Mixtape I made just for you"
+  }
+};
+function MDXContent2(props = {}) {
+  const _components = Object.assign({
+    p: "p"
+  }, props.components), { wrapper: MDXLayout } = _components;
+  const _content = /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null, /* @__PURE__ */ import_react9.default.createElement(_components.p, null, "Hello world this is another post"));
+  return MDXLayout ? /* @__PURE__ */ import_react9.default.createElement(MDXLayout, __spreadValues({}, props), _content) : _content;
+}
+var s_mixtape_default = MDXContent2;
+var filename2 = "90s-mixtape.mdx";
+var headers2 = typeof attributes2 !== "undefined" && attributes2.headers;
+var meta3 = typeof attributes2 !== "undefined" && attributes2.meta;
+var links3 = void 0;
+
+// route:/Users/alprielse/src/portfolio/app/routes/blog/index.tsx
+var blog_exports = {};
+__export(blog_exports, {
+  default: () => Blog,
+  loader: () => loader
+});
+init_react();
+
+// app/components/util/UnderConstructions.tsx
+init_react();
+var columnContainerStyles = {
+  display: "flex",
+  flexDirection: "column"
+};
+var imageStyles = {
+  paddingTop: "4em",
+  width: "15em",
+  margin: "0 auto"
+};
+function UnderConstruction() {
+  return /* @__PURE__ */ React.createElement("div", {
+    style: columnContainerStyles
+  }, /* @__PURE__ */ React.createElement("img", {
+    style: imageStyles,
+    src: "/images/under-construction.png"
+  }), /* @__PURE__ */ React.createElement("h4", {
+    style: { margin: "0 auto", textAlign: "center" }
+  }, "Page Still Under Construction \u{1F62C}"));
+}
+
+// app/hooks/useEnvironment.tsx
+init_react();
+function useEnvironment(request) {
+  const isDevelopmentMode = true;
+  const url = new URL(request.url);
+  const previewProduction = url.searchParams.get("previewProduction");
+  return {
+    isDevMode: isDevelopmentMode && !(previewProduction === "true")
+  };
+}
+
+// route:/Users/alprielse/src/portfolio/app/routes/blog/index.tsx
+function postFromModule(mod) {
+  return __spreadValues({
+    slug: mod.filename.replace(/\.mdx?$/, "")
+  }, mod.attributes.meta);
+}
+var loader = async ({ request }) => {
+  return {
+    posts: [postFromModule(s_mixtape_exports), postFromModule(my_first_post_exports)],
+    request
+  };
+};
+function Blog() {
+  const { posts, request } = useLoaderData();
+  const { isDevMode } = useEnvironment(request);
+  if (!isDevMode) {
+    return /* @__PURE__ */ React.createElement(UnderConstruction, null);
+  }
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Blog"), /* @__PURE__ */ React.createElement("ul", null, posts.map((post) => /* @__PURE__ */ React.createElement("li", {
+    key: post.slug
+  }, /* @__PURE__ */ React.createElement(Link2, {
+    to: post.slug
+  }, post.title)))));
+}
+
 // route:/Users/alprielse/src/portfolio/app/routes/projects.tsx
 var projects_exports = {};
 __export(projects_exports, {
   default: () => Projects,
-  links: () => links2
+  links: () => links4
 });
 init_react();
 
@@ -14783,7 +14910,7 @@ function YoutubeEmbed({ src }) {
 var projects_default = "/build/_assets/projects-UM64ON4P.css";
 
 // route:/Users/alprielse/src/portfolio/app/routes/projects.tsx
-function links2() {
+function links4() {
   return [
     {
       rel: "stylesheet",
@@ -14857,63 +14984,11 @@ function Projects() {
   }, /* @__PURE__ */ React.createElement("p", null, "// TODO: Write this up"))));
 }
 
-// route:/Users/alprielse/src/portfolio/app/routes/writing.tsx
-var writing_exports = {};
-__export(writing_exports, {
-  default: () => Writing,
-  loader: () => loader
-});
-init_react();
-
-// app/components/util/UnderConstructions.tsx
-init_react();
-var columnContainerStyles = {
-  display: "flex",
-  flexDirection: "column"
-};
-var imageStyles = {
-  paddingTop: "4em",
-  width: "15em",
-  margin: "0 auto"
-};
-function UnderConstruction() {
-  return /* @__PURE__ */ React.createElement("div", {
-    style: columnContainerStyles
-  }, /* @__PURE__ */ React.createElement("img", {
-    style: imageStyles,
-    src: "/images/under-construction.png"
-  }), /* @__PURE__ */ React.createElement("h4", {
-    style: { margin: "0 auto", textAlign: "center" }
-  }, "Page Still Under Construction \u{1F62C}"));
-}
-
-// app/hooks/useEnvironment.tsx
-init_react();
-function useEnvironment(request) {
-  const isDevelopmentMode = true;
-  const url = new URL(request.url);
-  const previewProduction = url.searchParams.get("previewProduction");
-  return {
-    isDevMode: isDevelopmentMode && !(previewProduction === "true")
-  };
-}
-
-// route:/Users/alprielse/src/portfolio/app/routes/writing.tsx
-var loader = async ({ request }) => ({ request });
-function Writing() {
-  const { request } = useLoaderData();
-  const { isDevMode } = useEnvironment(request);
-  if (!isDevMode) {
-    return /* @__PURE__ */ React.createElement(UnderConstruction, null);
-  }
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Writing"));
-}
-
 // route:/Users/alprielse/src/portfolio/app/routes/index.tsx
 var routes_exports = {};
 __export(routes_exports, {
   default: () => Landing,
-  links: () => links3
+  links: () => links5
 });
 init_react();
 
@@ -15047,7 +15122,7 @@ var experience_default = [
 ];
 
 // route:/Users/alprielse/src/portfolio/app/routes/index.tsx
-function links3() {
+function links5() {
   return [
     {
       rel: "stylesheet",
@@ -15063,7 +15138,7 @@ function Landing() {
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
 init_react();
-var assets_manifest_default = { "version": "5b728af8", "entry": { "module": "/build/entry.client-ANMXQBJ2.js", "imports": ["/build/_shared/chunk-L3NZK4UJ.js", "/build/_shared/chunk-IYRIQ6PI.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-LFPYPGKG.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-UNVD5KIO.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/projects-UQFMQPMZ.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/writing": { "id": "routes/writing", "parentId": "root", "path": "writing", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/writing-QP6GPZMQ.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-5B728AF8.js" };
+var assets_manifest_default = { "version": "8a4c1bc1", "entry": { "module": "/build/entry.client-NGCB7W62.js", "imports": ["/build/_shared/chunk-CSC6PCRD.js", "/build/_shared/chunk-IYRIQ6PI.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-55VTNSVZ.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/blog/90s-mixtape": { "id": "routes/blog/90s-mixtape", "parentId": "root", "path": "blog/90s-mixtape", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/blog/90s-mixtape-Z3KKDPHL.js", "imports": ["/build/_shared/chunk-7EKYFYR2.js"], "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/blog/index": { "id": "routes/blog/index", "parentId": "root", "path": "blog", "index": true, "caseSensitive": void 0, "module": "/build/routes/blog/index-KHSYUBUR.js", "imports": ["/build/_shared/chunk-FIW5T5O6.js", "/build/_shared/chunk-7EKYFYR2.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/blog/my-first-post": { "id": "routes/blog/my-first-post", "parentId": "root", "path": "blog/my-first-post", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/blog/my-first-post-53SRYP2X.js", "imports": ["/build/_shared/chunk-FIW5T5O6.js"], "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-UNVD5KIO.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/projects-UQFMQPMZ.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-8A4C1BC1.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };
@@ -15076,6 +15151,30 @@ var routes = {
     caseSensitive: void 0,
     module: root_exports
   },
+  "routes/blog/my-first-post": {
+    id: "routes/blog/my-first-post",
+    parentId: "root",
+    path: "blog/my-first-post",
+    index: void 0,
+    caseSensitive: void 0,
+    module: my_first_post_exports
+  },
+  "routes/blog/90s-mixtape": {
+    id: "routes/blog/90s-mixtape",
+    parentId: "root",
+    path: "blog/90s-mixtape",
+    index: void 0,
+    caseSensitive: void 0,
+    module: s_mixtape_exports
+  },
+  "routes/blog/index": {
+    id: "routes/blog/index",
+    parentId: "root",
+    path: "blog",
+    index: true,
+    caseSensitive: void 0,
+    module: blog_exports
+  },
   "routes/projects": {
     id: "routes/projects",
     parentId: "root",
@@ -15083,14 +15182,6 @@ var routes = {
     index: void 0,
     caseSensitive: void 0,
     module: projects_exports
-  },
-  "routes/writing": {
-    id: "routes/writing",
-    parentId: "root",
-    path: "writing",
-    index: void 0,
-    caseSensitive: void 0,
-    module: writing_exports
   },
   "routes/index": {
     id: "routes/index",
