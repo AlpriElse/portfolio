@@ -12,6 +12,7 @@ body {
   font-size: 1em;
   background-color: #282c35;
   color: #fff0ea;
+  padding: 4em;
 }
 
 h1,
@@ -83,7 +84,6 @@ a:visited {
 
 .navigation div {
   padding: 2em;
-  padding-left: 4em;
   padding-right: 4em;
   position: sticky;
   top: 2em;

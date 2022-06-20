@@ -1,0 +1,125 @@
+.section-intro {
+  min-height: 50vh;
+  margin: 0 auto;
+  padding-bottom: 10vh;
+}
+
+.section-intro .intro__hello {
+  padding-top: 12vh;
+}
+@media (min-width: 992) {
+  .section-intro .intro__hello {
+    padding-top: 25vh;
+  }
+}
+
+.section-intro .intro__introduction,
+.intro__introduction span {
+  margin-top: 6vh;
+  line-height: 2.6rem;
+  font-weight: 400;
+}
+
+.section-intro .intro__name {
+  font-weight: 800;
+}
+
+.section-intro .intro__get-in-touch {
+  margin-top: 7.5vh;
+  font-size: 1rem;
+  line-height: 1.75rem;
+  font-family: "Montserrat";
+}
+
+.section-intro .intro__email {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.background-section {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  min-height: 50vh;
+}
+
+.background__row {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+}
+
+.background__row > div {
+  flex: 1;
+}
+
+.background__headshot-wrapper {
+  position: relative;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+@media (min-width: 76px) {
+  .background__headshot-wrapper {
+    padding-left: 1rem;
+  }
+}
+
+img {
+  align-self: center;
+  max-width: 70vw;
+  width: auto;
+  height: auto;
+  border-radius: 1rem;
+}
+@media (min-width: 768px) {
+  img {
+    max-width: 90%;
+  }
+}
+@media (min-width: 992px) {
+  img {
+    max-width: 80%;
+  }
+}
+
+.experience-section {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  min-height: 50vh;
+  font-family: "Montserrat";
+}
+
+.experience__wrapper {
+  margin-top: 1rem;
+}
+
+.experience {
+  padding-bottom: 1.5rem;
+}
+.experience__header {
+  width: 100%;
+  font-size: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 0.75rem;
+}
+
+.experience__organization {
+  flex: 1;
+  flex-basis: 100%;
+  padding-bottom: 0.5rem;
+  line-height: 1.7rem;
+}
+@media (min-width: 768px) {
+  .experience__organization {
+    flex-basis: initial;
+    padding-bottom: 0;
+  }
+}
+
+.experience__position {
+  line-height: 1.6rem;
+}

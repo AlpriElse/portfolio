@@ -1086,7 +1086,7 @@ var require_react_development = __commonJS({
           }
           return dispatcher.useContext(Context, unstable_observedBits);
         }
-        function useState4(initialState) {
+        function useState5(initialState) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useState(initialState);
         }
@@ -1098,7 +1098,7 @@ var require_react_development = __commonJS({
           var dispatcher = resolveDispatcher();
           return dispatcher.useRef(initialValue);
         }
-        function useEffect4(create, deps) {
+        function useEffect5(create, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useEffect(create, deps);
         }
@@ -1668,13 +1668,13 @@ var require_react_development = __commonJS({
         exports.useCallback = useCallback5;
         exports.useContext = useContext4;
         exports.useDebugValue = useDebugValue;
-        exports.useEffect = useEffect4;
+        exports.useEffect = useEffect5;
         exports.useImperativeHandle = useImperativeHandle;
         exports.useLayoutEffect = useLayoutEffect4;
         exports.useMemo = useMemo4;
         exports.useReducer = useReducer;
         exports.useRef = useRef4;
-        exports.useState = useState4;
+        exports.useState = useState5;
         exports.version = ReactVersion;
       })();
     }
@@ -9895,7 +9895,7 @@ var require_react_dom_server_node_development = __commonJS({
         function basicStateReducer(state, action) {
           return typeof action === "function" ? action(state) : action;
         }
-        function useState4(initialState) {
+        function useState5(initialState) {
           {
             currentHookNameInDev = "useState";
           }
@@ -10066,7 +10066,7 @@ var require_react_dom_server_node_development = __commonJS({
           useMemo: useMemo4,
           useReducer,
           useRef: useRef4,
-          useState: useState4,
+          useState: useState5,
           useLayoutEffect: useLayoutEffect4,
           useCallback: useCallback5,
           useImperativeHandle: noop2,
@@ -14394,7 +14394,7 @@ function useTransition() {
   return transitionManager.getState().transition;
 }
 var LiveReload = false ? () => null : function LiveReload2({
-  port = Number(57367),
+  port = Number(50657),
   nonce = void 0
 }) {
   let js = String.raw;
@@ -14604,8 +14604,40 @@ init_react();
 
 // app/components/Navigation.tsx
 init_react();
+
+// app/hooks/useDevice.tsx
+init_react();
+var import_react5 = __toESM(require_react());
+
+// app/constants/Breakpoints.tsx
+init_react();
+var BREAKPOINT_MD_PX = 768;
+
+// app/hooks/useDevice.tsx
+function useDevice() {
+  const [windowWidth, setWindowWidth] = (0, import_react5.useState)(0);
+  (0, import_react5.useEffect)(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  if (windowWidth < BREAKPOINT_MD_PX) {
+    return {
+      deviceType: 0 /* MOBILE */
+    };
+  }
+  return {
+    deviceType: 1 /* DESKTOP */
+  };
+}
+
+// app/components/Navigation.tsx
 function Navigation() {
-  return /* @__PURE__ */ React.createElement("div", {
+  const { deviceType } = useDevice();
+  const navigation = /* @__PURE__ */ React.createElement("div", {
     className: "navigation"
   }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", null, "Alpri Else"), /* @__PURE__ */ React.createElement("ul", {
     style: {
@@ -14619,10 +14651,14 @@ function Navigation() {
   }, "Projects")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement(Link2, {
     to: "/writing"
   }, "Writing")))));
+  if (deviceType == 0 /* MOBILE */) {
+    return null;
+  }
+  return navigation;
 }
 
 // app/shared.css
-var shared_default = "/build/_assets/shared-BGMLKRRL.css";
+var shared_default = "/build/_assets/shared-5ROAQNLB.css";
 
 // route:/Users/alprielse/src/portfolio/app/root.tsx
 function links() {
@@ -14674,7 +14710,9 @@ function App() {
   }), /* @__PURE__ */ React.createElement("meta", {
     name: "theme-color",
     content: "#ffffff"
-  }), /* @__PURE__ */ React.createElement(Meta, null), /* @__PURE__ */ React.createElement(Links, null)), /* @__PURE__ */ React.createElement("body", null, /* @__PURE__ */ React.createElement("div", {
+  }), /* @__PURE__ */ React.createElement(Meta, null), /* @__PURE__ */ React.createElement(Links, null), /* @__PURE__ */ React.createElement("script", {
+    src: "https://kit.fontawesome.com/bafb654faa.js"
+  })), /* @__PURE__ */ React.createElement("body", null, /* @__PURE__ */ React.createElement("div", {
     style: {
       display: "flex",
       flexDirection: "row",
@@ -14958,7 +14996,7 @@ function Landing() {
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
 init_react();
-var assets_manifest_default = { "version": "7aa3edf0", "entry": { "module": "/build/entry.client-EMNJGZ7O.js", "imports": ["/build/_shared/chunk-G4ZEEE3O.js", "/build/_shared/chunk-IYRIQ6PI.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-VXSZUAYI.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-UNVD5KIO.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/projects-XM3VYU5U.js", "imports": ["/build/_shared/chunk-QZBM5DFC.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/writing": { "id": "routes/writing", "parentId": "root", "path": "writing", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/writing-Q4FT4SLZ.js", "imports": ["/build/_shared/chunk-QZBM5DFC.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-7AA3EDF0.js" };
+var assets_manifest_default = { "version": "791b2844", "entry": { "module": "/build/entry.client-UIFQJ7ZC.js", "imports": ["/build/_shared/chunk-RCHC675L.js", "/build/_shared/chunk-IYRIQ6PI.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-2GCERMZG.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-UNVD5KIO.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/projects-3EH6CJWF.js", "imports": ["/build/_shared/chunk-QZBM5DFC.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/writing": { "id": "routes/writing", "parentId": "root", "path": "writing", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/writing-EKPGFHZL.js", "imports": ["/build/_shared/chunk-QZBM5DFC.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-791B2844.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };

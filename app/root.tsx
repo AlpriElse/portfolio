@@ -61,6 +61,8 @@ export default function App() {
 
         <Meta />
         <Links />
+
+        <script src="https://kit.fontawesome.com/bafb654faa.js"></script>
       </head>
       <body>
         <div

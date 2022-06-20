@@ -1,7 +1,11 @@
 import { Link } from "@remix-run/react";
 
+import useDevice, { DeviceType } from "../hooks/useDevice";
+
 export default function Navigation() {
-  return (
+  const { deviceType } = useDevice();
+
+  const navigation = (
     <div className="navigation">
       <div>
         <h1>Alpri Else</h1>
@@ -24,4 +28,11 @@ export default function Navigation() {
       </div>
     </div>
   );
+
+  if (deviceType == DeviceType.MOBILE) {
+    //  TODO: Implement collapsable menu
+    return null;
+  }
+
+  return navigation;
 }
