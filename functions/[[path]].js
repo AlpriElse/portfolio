@@ -2519,13 +2519,13 @@ async function callRouteLoader({
   match,
   request
 }) {
-  let loader3 = match.route.module.loader;
-  if (!loader3) {
+  let loader2 = match.route.module.loader;
+  if (!loader2) {
     throw new Error(`You made a ${request.method} request to ${request.url} but did not provide a default component or \`loader\` for route "${match.route.id}", so there is no way to handle the request.`);
   }
   let result;
   try {
-    result = await loader3({
+    result = await loader2({
       request: stripDataParam(stripIndexParam(request)),
       context: loadContext,
       params: match.params
@@ -11179,15 +11179,15 @@ var require_react_dom_server_node_development = __commonJS({
           styleNameCache[styleName] = result;
           return result;
         };
-        function createMarkupForStyles(styles) {
+        function createMarkupForStyles(styles2) {
           var serialized = "";
           var delimiter = "";
-          for (var styleName in styles) {
-            if (!styles.hasOwnProperty(styleName)) {
+          for (var styleName in styles2) {
+            if (!styles2.hasOwnProperty(styleName)) {
               continue;
             }
             var isCustomProperty = styleName.indexOf("--") === 0;
-            var styleValue = styles[styleName];
+            var styleValue = styles2[styleName];
             {
               if (!isCustomProperty) {
                 warnValidStyle$1(styleName, styleValue);
@@ -13664,7 +13664,7 @@ async function loadRouteModuleWithBlockingLinks(route, routeModules) {
   return routeModule;
 }
 function createLoader(route, routeModules) {
-  let loader3 = async ({
+  let loader2 = async ({
     url,
     signal,
     submission
@@ -13684,7 +13684,7 @@ function createLoader(route, routeModules) {
       await loadRouteModuleWithBlockingLinks(route, routeModules);
     }
   };
-  return loader3;
+  return loader2;
 }
 function createAction(route, routeModules) {
   let action = async ({
@@ -14394,7 +14394,7 @@ function useTransition() {
   return transitionManager.getState().transition;
 }
 var LiveReload = false ? () => null : function LiveReload2({
-  port = Number(50657),
+  port = Number(61113),
   nonce = void 0
 }) {
   let js = String.raw;
@@ -14732,27 +14732,138 @@ function App() {
 var projects_exports = {};
 __export(projects_exports, {
   default: () => Projects,
-  links: () => links2,
-  loader: () => loader
+  links: () => links2
 });
 init_react();
 
-// app/components/projects/CourseProjects.tsx
+// app/components/projects/CourseProject.tsx
 init_react();
-function CourseProjects({ children }) {
+function CourseProject({
+  title: title2,
+  course,
+  children
+}) {
   return /* @__PURE__ */ React.createElement("div", {
     className: "coursework-project"
-  }, children);
+  }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("p", {
+    className: "coursework-project__title"
+  }, title2), /* @__PURE__ */ React.createElement("p", {
+    className: "coursework-project__course"
+  }, course)), /* @__PURE__ */ React.createElement("div", {
+    style: { paddingTop: "1em" }
+  }, children));
 }
-CourseProjects.Course = ({ children }) => /* @__PURE__ */ React.createElement("h5", {
-  className: "coursework-project__course"
-}, children);
-CourseProjects.Title = ({ children }) => /* @__PURE__ */ React.createElement("h4", {
-  className: "coursework-project__title"
-}, children);
-CourseProjects.Body = ({ children }) => /* @__PURE__ */ React.createElement("p", {
-  className: "coursework-project__body"
-}, children);
+
+// app/components/projects/YoutubeEmbed.tsx
+init_react();
+
+// app/constants/Colors.tsx
+init_react();
+var ABYSS = "#0c0c0c";
+
+// app/components/projects/YoutubeEmbed.tsx
+var styles = {
+  borderRadius: "1em",
+  backgroundColor: ABYSS
+};
+function YoutubeEmbed({ src }) {
+  return /* @__PURE__ */ React.createElement("iframe", {
+    style: styles,
+    width: "560",
+    height: "350",
+    src,
+    title: "YouTube video player",
+    frameBorder: "0",
+    allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+    allowFullScreen: true
+  });
+}
+
+// app/styles/projects.css
+var projects_default = "/build/_assets/projects-UM64ON4P.css";
+
+// route:/Users/alprielse/src/portfolio/app/routes/projects.tsx
+function links2() {
+  return [
+    {
+      rel: "stylesheet",
+      href: projects_default
+    }
+  ];
+}
+function Projects() {
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", {
+    className: "projects-section"
+  }, /* @__PURE__ */ React.createElement("h1", null, "Personal Projects"), /* @__PURE__ */ React.createElement("h3", null, "// TODO: Write these up!")), /* @__PURE__ */ React.createElement("div", {
+    className: "projects-section"
+  }, /* @__PURE__ */ React.createElement("div", {
+    style: { paddingBottom: "2em" }
+  }, /* @__PURE__ */ React.createElement("h1", null, "University Coursework Projects"), /* @__PURE__ */ React.createElement("p", null, `A subset of "Machine Problems" (MPs) and other Projects I've worked on as part of coursework while an undergraduate Computer Science student at UIUC.`)), /* @__PURE__ */ React.createElement(CourseProject, {
+    title: "Scalable Topic Models on Live Streamed Speech Transcription (Group\n          Research Project)",
+    course: "CS 525 Advanced Distributed Systems"
+  }, /* @__PURE__ */ React.createElement("p", null, "// TODO: Write this up")), /* @__PURE__ */ React.createElement(CourseProject, {
+    title: "Variational Bayes Autoencoder",
+    course: "CS 446 Machine Learning (Spring 2021)"
+  }, /* @__PURE__ */ React.createElement("p", null, "// TODO: Write this up")), /* @__PURE__ */ React.createElement(CourseProject, {
+    title: "Cloud MQTT System for Simulated IoT Watch Heartbeat Classification\n            (Group Project)",
+    course: "CS 498 IT Internet of Things (Fall 2020)"
+  }, /* @__PURE__ */ React.createElement(YoutubeEmbed, {
+    src: "https://www.youtube.com/embed/bWrG4QEmEkw"
+  })), /* @__PURE__ */ React.createElement(CourseProject, {
+    title: "Simulated Shopping-Gaze Data Warehousing System (Group Project)",
+    course: "CS 498 IT Internet of Things (Fall 2020)"
+  }, /* @__PURE__ */ React.createElement(YoutubeEmbed, {
+    src: "https://www.youtube.com/embed/uc4vjlZqEoE"
+  })), /* @__PURE__ */ React.createElement(CourseProject, {
+    title: "Wireless Mesh Sensor Network (Group Project)",
+    course: "CS 498 IT Internet of Things (Fall 2020)"
+  }, /* @__PURE__ */ React.createElement(YoutubeEmbed, {
+    src: "https://www.youtube.com/embed/MOy-me35__M"
+  })), /* @__PURE__ */ React.createElement(CourseProject, {
+    title: "Stripped-down Advanced Driver-Assistance System (Group Project)",
+    course: "CS 498 IT Internet of Things (Fall 2020)"
+  }, /* @__PURE__ */ React.createElement(YoutubeEmbed, {
+    src: "https://www.youtube.com/embed/ppEiWGtd6eQ"
+  })), /* @__PURE__ */ React.createElement(CourseProject, {
+    title: "Distributed File System with MapReduce (Group Project)",
+    course: "CS 425 Distributed Systems (Fall 2020)"
+  }, /* @__PURE__ */ React.createElement("p", null, "// TODO: Write this up")), /* @__PURE__ */ React.createElement(CourseProject, {
+    title: "Q-Learning Agent for Snake",
+    course: "CS 440 Artificial Intelligence (Fall 2020)"
+  }, /* @__PURE__ */ React.createElement("p", null, "// TODO: Write this up")), /* @__PURE__ */ React.createElement(CourseProject, {
+    title: "Parts-of-Speech Tagging HMM Model",
+    course: "CS 440 Artificial Intelligence (Fall 2020)"
+  }, /* @__PURE__ */ React.createElement("p", null, "// TODO: Write this up")), /* @__PURE__ */ React.createElement(CourseProject, {
+    title: "React Timeseries COVID-19 Visualization",
+    course: "CS 242 Programming Studio (Spring 2020)"
+  }, /* @__PURE__ */ React.createElement("p", null, "// TODO: Write this up")), /* @__PURE__ */ React.createElement(CourseProject, {
+    title: "Goodreads React Clone",
+    course: "CS 242 Programming Studio (Spring 2020)"
+  }, /* @__PURE__ */ React.createElement("p", null, "// TODO: Write this up")), /* @__PURE__ */ React.createElement(CourseProject, {
+    title: "React Native Github App",
+    course: "CS 242 Programming Studio (Spring 2020)"
+  }, /* @__PURE__ */ React.createElement("p", null, "// TODO: Write this up")), /* @__PURE__ */ React.createElement(CourseProject, {
+    title: "Chess in Java",
+    course: "CS 242 Programming Studio (Spring 2020)"
+  }, /* @__PURE__ */ React.createElement("p", null, "// TODO: Write this up")), /* @__PURE__ */ React.createElement(CourseProject, {
+    title: "HTTP Web Server in C",
+    course: "CS 241 Systems Programming (Spring 2019)"
+  }, /* @__PURE__ */ React.createElement("p", null, "// TODO: Write this up")), /* @__PURE__ */ React.createElement(CourseProject, {
+    title: "Shell in C",
+    course: "CS 241 Systems Programming (Spring 2019)"
+  }, /* @__PURE__ */ React.createElement("p", null, "// TODO: Write this up")), /* @__PURE__ */ React.createElement(CourseProject, {
+    title: "Malloc",
+    course: "CS 241 Systems Programming (Spring 2019)"
+  }, /* @__PURE__ */ React.createElement("p", null, "// TODO: Write this up"))));
+}
+
+// route:/Users/alprielse/src/portfolio/app/routes/writing.tsx
+var writing_exports = {};
+__export(writing_exports, {
+  default: () => Writing,
+  loader: () => loader
+});
+init_react();
 
 // app/components/util/UnderConstructions.tsx
 init_react();
@@ -14787,52 +14898,8 @@ function useEnvironment(request) {
   };
 }
 
-// app/styles/projects.css
-var projects_default = "/build/_assets/projects-PFGGHPKM.css";
-
-// route:/Users/alprielse/src/portfolio/app/routes/projects.tsx
-function links2() {
-  return [
-    {
-      rel: "stylesheet",
-      href: projects_default
-    }
-  ];
-}
-var loader = async ({ request }) => ({ request });
-function Projects() {
-  const { request } = useLoaderData();
-  const { isDevMode } = useEnvironment(request);
-  if (!isDevMode) {
-    return /* @__PURE__ */ React.createElement(UnderConstruction, null);
-  }
-  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", {
-    className: "projects-section"
-  }, /* @__PURE__ */ React.createElement("h1", null, "Personal Projects"), /* @__PURE__ */ React.createElement("h3", null, "Coming soon...")), /* @__PURE__ */ React.createElement("div", {
-    className: "projects-section"
-  }, /* @__PURE__ */ React.createElement("h1", null, "UIUC Coursework Projects"), /* @__PURE__ */ React.createElement(CourseProjects, null, /* @__PURE__ */ React.createElement(CourseProjects.Course, null, "CS 525 Advanced Distributed Systems"), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, "Scalable Topic Models on Live Streamed Speech Transcription (Group Research Project)")), /* @__PURE__ */ React.createElement(CourseProjects, null, /* @__PURE__ */ React.createElement(CourseProjects.Course, null, "CS 446 Machine Learning (Spring 2021)"), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, "Variational Bayes Autoencoder")), /* @__PURE__ */ React.createElement(CourseProjects, null, /* @__PURE__ */ React.createElement(CourseProjects.Course, null, "CS 498 IT Internet of Things (Fall 2020)"), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, /* @__PURE__ */ React.createElement("a", {
-    href: "https://www.youtube.com/watch?v=bWrG4QEmEkw",
-    target: "_blank"
-  }, "Cloud MQTT System for Simulated IoT Watch Heartbeat Classification (Group Project)")), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, /* @__PURE__ */ React.createElement("a", {
-    href: "https://www.youtube.com/watch?v=uc4vjlZqEoE",
-    target: "_blank"
-  }, "Simulated Shopping-Gaze Data Warehousing System (Group Project)")), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, /* @__PURE__ */ React.createElement("a", {
-    href: "https://www.youtube.com/watch?v=MOy-me35__M",
-    target: "_blank"
-  }, "Wireless Mesh Sensor Network (Group Project)")), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, /* @__PURE__ */ React.createElement("a", {
-    href: "https://www.youtube.com/watch?v=ppEiWGtd6eQ&ab_channel=AlpriB.Else",
-    target: "_blank"
-  }, "Stripped-down Advanced Driver-Assistance System (Group Project)"))), /* @__PURE__ */ React.createElement(CourseProjects, null, /* @__PURE__ */ React.createElement(CourseProjects.Course, null, "CS 425 Distributed Systems (Fall 2020)"), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, "Distributed File System with MapReduce (Group Project)"), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, "Distributed Logfile Grep")), /* @__PURE__ */ React.createElement(CourseProjects, null, /* @__PURE__ */ React.createElement(CourseProjects.Course, null, "CS 440 Artificial Intelligence (Fall 2020)"), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, "Q-Learning Agent for Snake"), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, "Parts-of-Speech Tagging HMM Model")), /* @__PURE__ */ React.createElement(CourseProjects, null, /* @__PURE__ */ React.createElement(CourseProjects.Course, null, "CS 242 Programming Studio (Spring 2020)"), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, "React Timeseries COVID-19 Visualization"), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, "Goodreads React Clone"), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, "React Native Github App"), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, "Chess implemented in Java")), /* @__PURE__ */ React.createElement(CourseProjects, null, /* @__PURE__ */ React.createElement(CourseProjects.Course, null, "CS 241 Systems Programming (Spring 2019)"), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, "HTTP Web Server in C"), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, "Shell written in C"), /* @__PURE__ */ React.createElement(CourseProjects.Title, null, "Malloc"))));
-}
-
 // route:/Users/alprielse/src/portfolio/app/routes/writing.tsx
-var writing_exports = {};
-__export(writing_exports, {
-  default: () => Writing,
-  loader: () => loader2
-});
-init_react();
-var loader2 = async ({ request }) => ({ request });
+var loader = async ({ request }) => ({ request });
 function Writing() {
   const { request } = useLoaderData();
   const { isDevMode } = useEnvironment(request);
@@ -14996,7 +15063,7 @@ function Landing() {
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
 init_react();
-var assets_manifest_default = { "version": "791b2844", "entry": { "module": "/build/entry.client-UIFQJ7ZC.js", "imports": ["/build/_shared/chunk-RCHC675L.js", "/build/_shared/chunk-IYRIQ6PI.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-2GCERMZG.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-UNVD5KIO.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/projects-3EH6CJWF.js", "imports": ["/build/_shared/chunk-QZBM5DFC.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/writing": { "id": "routes/writing", "parentId": "root", "path": "writing", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/writing-EKPGFHZL.js", "imports": ["/build/_shared/chunk-QZBM5DFC.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-791B2844.js" };
+var assets_manifest_default = { "version": "5b728af8", "entry": { "module": "/build/entry.client-ANMXQBJ2.js", "imports": ["/build/_shared/chunk-L3NZK4UJ.js", "/build/_shared/chunk-IYRIQ6PI.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-LFPYPGKG.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-UNVD5KIO.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/projects-UQFMQPMZ.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/writing": { "id": "routes/writing", "parentId": "root", "path": "writing", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/writing-QP6GPZMQ.js", "imports": void 0, "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-5B728AF8.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };
