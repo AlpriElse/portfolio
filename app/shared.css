@@ -12,7 +12,13 @@ body {
   font-size: 1em;
   background-color: #282c35;
   color: #fff0ea;
-  padding: 4em;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 4em;
+  }
 }
 
 h1,

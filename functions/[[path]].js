@@ -14394,7 +14394,7 @@ function useTransition() {
   return transitionManager.getState().transition;
 }
 var LiveReload = false ? () => null : function LiveReload2({
-  port = Number(51815),
+  port = Number(52965),
   nonce = void 0
 }) {
   let js = String.raw;
@@ -14658,7 +14658,7 @@ function Navigation() {
 }
 
 // app/shared.css
-var shared_default = "/build/_assets/shared-5ROAQNLB.css";
+var shared_default = "/build/_assets/shared-WWRABGOB.css";
 
 // route:/Users/alprielse/src/portfolio/app/root.tsx
 function links() {
@@ -15138,7 +15138,7 @@ function Landing() {
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
 init_react();
-var assets_manifest_default = { "version": "8a4c1bc1", "entry": { "module": "/build/entry.client-NGCB7W62.js", "imports": ["/build/_shared/chunk-CSC6PCRD.js", "/build/_shared/chunk-IYRIQ6PI.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-55VTNSVZ.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/blog/90s-mixtape": { "id": "routes/blog/90s-mixtape", "parentId": "root", "path": "blog/90s-mixtape", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/blog/90s-mixtape-Z3KKDPHL.js", "imports": ["/build/_shared/chunk-7EKYFYR2.js"], "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/blog/index": { "id": "routes/blog/index", "parentId": "root", "path": "blog", "index": true, "caseSensitive": void 0, "module": "/build/routes/blog/index-KHSYUBUR.js", "imports": ["/build/_shared/chunk-FIW5T5O6.js", "/build/_shared/chunk-7EKYFYR2.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/blog/my-first-post": { "id": "routes/blog/my-first-post", "parentId": "root", "path": "blog/my-first-post", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/blog/my-first-post-53SRYP2X.js", "imports": ["/build/_shared/chunk-FIW5T5O6.js"], "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-UNVD5KIO.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/projects-UQFMQPMZ.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-8A4C1BC1.js" };
+var assets_manifest_default = { "version": "1f56ddcb", "entry": { "module": "/build/entry.client-W5EVLUFH.js", "imports": ["/build/_shared/chunk-BNXOJ7DW.js", "/build/_shared/chunk-IYRIQ6PI.js"] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "module": "/build/root-EE37PJSX.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/blog/90s-mixtape": { "id": "routes/blog/90s-mixtape", "parentId": "root", "path": "blog/90s-mixtape", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/blog/90s-mixtape-Z3KKDPHL.js", "imports": ["/build/_shared/chunk-7EKYFYR2.js"], "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/blog/index": { "id": "routes/blog/index", "parentId": "root", "path": "blog", "index": true, "caseSensitive": void 0, "module": "/build/routes/blog/index-45QUACVC.js", "imports": ["/build/_shared/chunk-FIW5T5O6.js", "/build/_shared/chunk-7EKYFYR2.js"], "hasAction": false, "hasLoader": true, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/blog/my-first-post": { "id": "routes/blog/my-first-post", "parentId": "root", "path": "blog/my-first-post", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/blog/my-first-post-53SRYP2X.js", "imports": ["/build/_shared/chunk-FIW5T5O6.js"], "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/index": { "id": "routes/index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "module": "/build/routes/index-UNVD5KIO.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false }, "routes/projects": { "id": "routes/projects", "parentId": "root", "path": "projects", "index": void 0, "caseSensitive": void 0, "module": "/build/routes/projects-UQFMQPMZ.js", "imports": void 0, "hasAction": false, "hasLoader": false, "hasCatchBoundary": false, "hasErrorBoundary": false } }, "url": "/build/manifest-1F56DDCB.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var entry = { module: entry_server_exports };
